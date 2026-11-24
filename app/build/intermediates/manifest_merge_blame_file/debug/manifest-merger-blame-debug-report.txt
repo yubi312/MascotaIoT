@@ -1,0 +1,195 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!-- AndroidManifest.xml — MascotaIoT -->
+3<!-- Permisos de red requeridos para Firebase y comunicación WiFi con ESP32 -->
+4<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+5    package="com.example.mascotaiot"
+6    android:versionCode="1"
+7    android:versionName="1.0" >
+8
+9    <uses-sdk
+10        android:minSdkVersion="24"
+11        android:targetSdkVersion="34" />
+12
+13    <!-- Permiso para acceso a Internet (Firebase Realtime Database) -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:8:5-67
+14-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:8:22-64
+15    <!-- Permiso de estado de red (verificar conectividad antes de comunicarse con ESP32) -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:10:5-79
+16-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:10:22-76
+17    <!-- Permiso WiFi para comunicación directa con ESP32 (futuro) -->
+18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+18-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:12:5-76
+18-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:12:22-73
+19    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+19-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:13:5-76
+19-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:13:22-73
+20
+21    <permission
+21-->[androidx.core:core:1.12.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\6201466d3a72a8d66be4d7fd5ad3a026\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+22        android:name="com.example.mascotaiot.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.12.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\6201466d3a72a8d66be4d7fd5ad3a026\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.12.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\6201466d3a72a8d66be4d7fd5ad3a026\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="com.example.mascotaiot.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.12.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\6201466d3a72a8d66be4d7fd5ad3a026\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.12.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\6201466d3a72a8d66be4d7fd5ad3a026\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+26
+27    <application
+27-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:15:5-64:19
+28        android:allowBackup="true"
+28-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:16:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.12.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\6201466d3a72a8d66be4d7fd5ad3a026\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+30        android:debuggable="true"
+31        android:extractNativeLibs="false"
+32        android:icon="@drawable/ic_logo_mascota"
+32-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:17:9-49
+33        android:label="@string/app_name"
+33-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:18:9-41
+34        android:networkSecurityConfig="@xml/network_security_config"
+34-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:22:9-69
+35        android:roundIcon="@drawable/ic_logo_mascota"
+35-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:19:9-54
+36        android:supportsRtl="true"
+36-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:20:9-35
+37        android:theme="@style/Theme.MascotaIoT" >
+37-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:21:9-48
+38
+39        <!-- Pantalla 1: Login (Launcher) -->
+40        <activity
+40-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:25:9-32:20
+41            android:name="com.example.mascotaiot.LoginActivity"
+41-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:26:13-42
+42            android:exported="true" >
+42-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:27:13-36
+43            <intent-filter>
+43-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:28:13-31:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:29:17-69
+44-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:29:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:30:17-77
+46-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:30:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <!-- Pantalla 2: Crear Cuenta -->
+51        <activity
+51-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:35:9-37:40
+52            android:name="com.example.mascotaiot.CrearCuentaActivity"
+52-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:36:13-48
+53            android:exported="false" />
+53-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:37:13-37
+54
+55        <!-- Pantalla 3: Menú -->
+56        <activity
+56-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:40:9-42:40
+57            android:name="com.example.mascotaiot.MenuActivity"
+57-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:41:13-41
+58            android:exported="false" />
+58-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:42:13-37
+59
+60        <!-- Pantalla 4: Manipular Circuito -->
+61        <activity
+61-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:45:9-47:40
+62            android:name="com.example.mascotaiot.ManipularCircuitoActivity"
+62-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:46:13-54
+63            android:exported="false" />
+63-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:47:13-37
+64
+65        <!-- Pantalla 5: Ver Acciones -->
+66        <activity
+66-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:50:9-52:40
+67            android:name="com.example.mascotaiot.VerAccionesActivity"
+67-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:51:13-48
+68            android:exported="false" />
+68-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:52:13-37
+69
+70        <!-- Pantalla 6: Estadísticas -->
+71        <activity
+71-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:55:9-57:40
+72            android:name="com.example.mascotaiot.EstadisticasActivity"
+72-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:56:13-49
+73            android:exported="false" />
+73-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:57:13-37
+74
+75        <!-- Pantalla 7: Ver Perfil -->
+76        <activity
+76-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:60:9-62:40
+77            android:name="com.example.mascotaiot.VerPerfilActivity"
+77-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:61:13-46
+78            android:exported="false" />
+78-->C:\Users\PC\.gemini\antigravity\scratch\MascotaIoT\app\src\main\AndroidManifest.xml:62:13-37
+79
+80        <provider
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+81            android:name="androidx.startup.InitializationProvider"
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+82            android:authorities="com.example.mascotaiot.androidx-startup"
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+83            android:exported="false" >
+83-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+84            <meta-data
+84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+85                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+86                android:value="androidx.startup" />
+86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\f6ddb3a7fdb4d40ff53d00236ea447bb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+87            <meta-data
+87-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\PC\.gradle\caches\8.14.5\transforms\1683ef0e0a40b8670fb8f39a3605dcfe\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+88                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+88-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\PC\.gradle\caches\8.14.5\transforms\1683ef0e0a40b8670fb8f39a3605dcfe\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+89                android:value="androidx.startup" />
+89-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\PC\.gradle\caches\8.14.5\transforms\1683ef0e0a40b8670fb8f39a3605dcfe\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+90            <meta-data
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+91                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+92                android:value="androidx.startup" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+93        </provider>
+94
+95        <receiver
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+96            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+97            android:directBootAware="false"
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+98            android:enabled="true"
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+99            android:exported="true"
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+100            android:permission="android.permission.DUMP" >
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+101            <intent-filter>
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+102                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+103            </intent-filter>
+104            <intent-filter>
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+105                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+106            </intent-filter>
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+108                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+111                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\PC\.gradle\caches\8.14.5\transforms\710fb0d98d2a7b95d1b501703970f1ff\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+112            </intent-filter>
+113        </receiver>
+114    </application>
+115
+116</manifest>

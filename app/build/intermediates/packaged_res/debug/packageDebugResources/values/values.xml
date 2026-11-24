@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ambar_claro">#FFD54F</color>
+    <color name="ambar_oscuro">#E65100</color>
+    <color name="ambar_primario">#FFA000</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="blanco_20">#33FFFFFF</color>
+    <color name="blanco_70">#B3FFFFFF</color>
+    <color name="card_borde">#FFA000</color>
+    <color name="card_fondo">#1E2D3D</color>
+    <color name="fondo_medio">#1B2A3B</color>
+    <color name="fondo_oscuro">#0D1B2A</color>
+    <color name="gris_input">#263545</color>
+    <color name="negro">#000000</color>
+    <color name="rojo_accion">#C62828</color>
+    <color name="separador">#2C3E50</color>
+    <color name="texto_secundario">#90CAF9</color>
+    <color name="verde_activo">#2E7D32</color>
+    <color name="verde_claro">#A5D6A7</color>
+    <string name="abrir_compuerta">Abrir compuerta</string>
+    <string name="accion_ejemplo">Obstáculo Detectado</string>
+    <string name="activar">ACTIVAR</string>
+    <string name="apellido">Apellido</string>
+    <string name="app_name">MascotaIoT</string>
+    <string name="bienvenido">Bienvenido al sistema</string>
+    <string name="btn_crear_cuenta">Crear Cuenta</string>
+    <string name="btn_iniciar_sesion">Iniciar Sesión</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="btn_volver_simple">Volver</string>
+    <string name="cargando">Cargando…</string>
+    <string name="cargo">Cargo</string>
+    <string name="cerrar_compuerta">Cerrar compuerta</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="contrasena_oculta">••••••••</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="desactivar">DESACTIVAR</string>
+    <string name="desc_card_activaciones">Tarjeta de activaciones</string>
+    <string name="desc_card_desactivaciones">Tarjeta de desactivaciones</string>
+    <string name="desc_card_distancia">Tarjeta de distancia total</string>
+    <string name="desc_card_obstaculos">Tarjeta de obstáculos detectados</string>
+    <string name="desc_card_sensor">Estado del sensor ESP32</string>
+    <string name="distancia_ejemplo">30 cm</string>
+    <string name="esp32_footer">ESP32 · Smart Access · IoT</string>
+    <string name="estado_circuito">Estado del circuito</string>
+    <string name="fecha_ejemplo">01 01 2025</string>
+    <string name="firebase_database_url" translatable="false">https://fir-mascotasiot-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">459633224724</string>
+    <string name="google_api_key" translatable="false">AIzaSyBW5qqL0qbLS70pJwMRdu_tEDP6nI6jqPQ</string>
+    <string name="google_app_id" translatable="false">1:459633224724:android:7c638e210a07ad5dc1cb01</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBW5qqL0qbLS70pJwMRdu_tEDP6nI6jqPQ</string>
+    <string name="google_storage_bucket" translatable="false">fir-mascotasiot.firebasestorage.app</string>
+    <string name="hora_ejemplo">00:00:00</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="label_activaciones">Activaciones</string>
+    <string name="label_apellido">APELLIDO</string>
+    <string name="label_cargo">CARGO</string>
+    <string name="label_contrasena">CONTRASEÑA</string>
+    <string name="label_correo">CORREO</string>
+    <string name="label_desactivaciones">Desactivaciones</string>
+    <string name="label_distancia_caps">DISTANCIA</string>
+    <string name="label_distancia_total">Distancia Total</string>
+    <string name="label_nombre">NOMBRE</string>
+    <string name="label_obstaculos">Obstáculos\nDetectados</string>
+    <string name="label_rut">RUT</string>
+    <string name="label_usuario_caps">USUARIO</string>
+    <string name="login_card_titulo">INICIAR SESIÓN</string>
+    <string name="login_subtitulo">Control inteligente para tu mascota</string>
+    <string name="manipular_circuito">Manipular Circuito</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombre_usuario_placeholder">Nombre Usuario</string>
+    <string name="panel_control">PANEL DE CONTROL</string>
+    <string name="project_id" translatable="false">fir-mascotasiot</string>
+    <string name="registrar">Registrar</string>
+    <string name="repetir_contrasena">Repetir Contraseña</string>
+    <string name="rut">RUT</string>
+    <string name="rut_ejemplo">11.111.111-1</string>
+    <string name="sensor_detalle">ESP32 · HC-SR04 · Sistema Local IoT</string>
+    <string name="sensor_titulo">Sensor de distancia activo</string>
+    <string name="separador_o">o</string>
+    <string name="separador_punto">·</string>
+    <string name="sin_conexion">Sin conexión</string>
+    <string name="subtitulo_crear_cuenta">Registra tu acceso al sistema</string>
+    <string name="titulo_acciones">HISTORIAL DE ACCIONES</string>
+    <string name="titulo_crear_cuenta">NUEVA CUENTA</string>
+    <string name="titulo_estadisticas">ESTADÍSTICAS</string>
+    <string name="titulo_estadisticas_completo">ESTADÍSTICAS</string>
+    <string name="titulo_historial_acciones">HISTORIAL DE ACCIONES</string>
+    <string name="titulo_manipular">MANIPULAR CIRCUITO</string>
+    <string name="titulo_perfil">VER PERFIL</string>
+    <string name="valor_inicial_distancia">0 cm</string>
+    <string name="valor_inicial_numero">0</string>
+    <string name="valor_vacio">—</string>
+    <string name="ver_acciones_realizadas">Ver Acciones Realizadas</string>
+    <string name="ver_estadisticas">Ver Estadísticas</string>
+    <string name="ver_perfil">Ver Perfil</string>
+    <string name="volver">Volver al Menú</string>
+    <style name="BotonAmbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/ambar_primario</item>
+        <item name="android:textColor">@color/fondo_oscuro</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+    <style name="BotonMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:backgroundTint">@color/card_fondo</item>
+        <item name="android:textColor">@color/blanco</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="strokeColor">@color/ambar_primario</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="iconGravity">start</item>
+        <item name="iconPadding">12dp</item>
+        <item name="iconTint">@color/ambar_primario</item>
+    </style>
+    <style name="BotonOutline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/fondo_oscuro</item>
+        <item name="android:textColor">@color/ambar_primario</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="strokeColor">@color/ambar_primario</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+    <style name="BotonRojo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/rojo_accion</item>
+        <item name="android:textColor">@color/blanco</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+    <style name="Theme.MascotaIoT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ambar_primario</item>
+        <item name="colorPrimaryDark">@color/fondo_oscuro</item>
+        <item name="colorAccent">@color/ambar_primario</item>
+        <item name="android:windowBackground">@color/fondo_oscuro</item>
+        <item name="android:statusBarColor">@color/fondo_oscuro</item>
+        <item name="android:navigationBarColor">@color/fondo_oscuro</item>
+        <item name="android:textColorHint">@color/blanco_70</item>
+    </style>
+    <style name="TituloSeccion">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/texto_secundario</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+</resources>

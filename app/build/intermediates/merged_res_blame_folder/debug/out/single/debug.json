@@ -1,0 +1,174 @@
+[
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_crear_cuenta.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_crear_cuenta.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_login.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_item_accion.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\item_accion.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_boton_desactivar.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_boton_desactivar.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_logo_mascota.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_logo_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_person_add.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_person_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_estadisticas.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_estadisticas.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_header_ambar.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_header_ambar.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\mipmap_ic_launcher.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\mipmap\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\mipmap_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\mipmap\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_lock.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_lock.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_led_inactivo.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_led_inactivo.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_paw.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_paw.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_ver_perfil.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_ver_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_sensor.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_sensor.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_gradiente_principal.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_gradiente_principal.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_manipular_circuito.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_manipular_circuito.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_menu.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\layout_activity_ver_acciones.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\layout\\activity_ver_acciones.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_boton_activar.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_boton_activar.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_input_oscuro.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_input_oscuro.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_badge.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_work.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_work.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_history.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_door_open.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_door_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_analytics.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_analytics.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_distance.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_distance.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_power.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_power.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_separador.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_separador.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_led_rojo.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_led_rojo.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_account.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_card_oscura.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_card_oscura.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_bg_led_activo.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\bg_led_activo.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-merged_res-4:\\drawable_ic_door_closed.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.14.5\\com.example.mascotaiot.app-main-6:\\drawable\\ic_door_closed.xml"
+    }
+]
