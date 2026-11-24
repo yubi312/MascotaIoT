@@ -1,0 +1,350 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <WiFiClientSecure.h>
+#include <ArduinoJson.h>
+#include <ESP32Servo.h>
+
+const char* ssid = "Xiaomi15T";
+const char* password = "123456789";
+
+const String firebaseBase    = "https://fir-mascotasiot-default-rtdb.firebaseio.com";
+const String urlCircuito     = firebaseBase + "/circuito.json";
+const String urlAcciones     = firebaseBase + "/acciones.json";
+const String urlEstadisticas = firebaseBase + "/estadisticas.json";
+const String urlUsuario1     = firebaseBase + "/Usuario/1.json";
+const String urlRuts         = firebaseBase + "/ruts"; 
+
+const int pinServo    = 25; 
+const int pinPIR      = 33; 
+const int pinLedVerde = 12;  
+const int pinLedRojo  = 14;  
+Servo servoCompuerta;
+int posicionActual = -1;
+unsigned long ultimoChequeo = 0;
+unsigned long ultimoRegistroMovimiento = 0;
+unsigned long ultimoMomentoPIR = 0;
+bool compuertaAbiertaPorPIR = false;
+
+int activaciones    = 0;
+int desactivaciones = 0;
+int obstaculos      = 0;
+String usuarioRUT   = "11.111.111-1";
+String usuarioNombre = "Carlos Riveros";
+
+void cargarDatosUsuario() {
+  if (WiFi.status() != WL_CONNECTED) return;
+
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+
+  if (http.begin(client, urlUsuario1)) {
+    int code = http.GET();
+    if (code == HTTP_CODE_OK) {
+      String payload = http.getString();
+      StaticJsonDocument<512> doc;
+      if (!deserializeJson(doc, payload)) {
+        usuarioNombre = doc["nombre"].as<String>() + " " + doc["apellido"].as<String>();
+        usuarioRUT    = doc["RUT"].as<String>();
+        Serial.println("👤 [Usuario]: Cargado -> " + usuarioNombre + " (" + usuarioRUT + ")");
+      }
+    }
+    http.end();
+  }
+}
+
+void cargarEstadisticasIniciales() {
+  if (WiFi.status() != WL_CONNECTED) return;
+
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+
+  if (http.begin(client, urlEstadisticas)) {
+    int code = http.GET();
+    if (code == HTTP_CODE_OK) {
+      String payload = http.getString();
+      StaticJsonDocument<256> doc;
+      if (!deserializeJson(doc, payload)) {
+        activaciones    = doc["activaciones"] | 0;
+        desactivaciones = doc["desactivaciones"] | 0;
+        obstaculos      = doc["obstaculos"] | 0;
+        Serial.printf("📊 [Estadísticas Iniciales]: Activaciones: %d | Desactivaciones: %d | Obstáculos: %d\n",
+                      activaciones, desactivaciones, obstaculos);
+      }
+    }
+    http.end();
+  }
+}
+
+void actualizarEstadisticasEnFirebase() {
+  if (WiFi.status() != WL_CONNECTED) return;
+
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+
+  if (http.begin(client, urlEstadisticas)) {
+    http.addHeader("Content-Type", "application/json");
+
+    StaticJsonDocument<256> doc;
+    doc["activaciones"]        = activaciones;
+    doc["desactivaciones"]     = desactivaciones;
+    doc["obstaculos"]          = obstaculos;
+    doc["distanciaTotal"]      = 0;
+    doc["ultimaActualizacion"] = "23/11/2026 12:20:00";
+    doc["ultimoUsuario"]       = usuarioRUT;
+
+    String jsonString;
+    serializeJson(doc, jsonString);
+
+    int res = http.PATCH(jsonString);
+    if (res > 0) {
+      Serial.println("📊 [Firebase]: Nodo /estadisticas actualizado con éxito.");
+    }
+    http.end();
+  }
+}
+
+void registrarAccion(String accion, String detalle) {
+  if (WiFi.status() != WL_CONNECTED) return;
+
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+
+  if (http.begin(client, urlAcciones)) {
+    http.addHeader("Content-Type", "application/json");
+
+    StaticJsonDocument<256> doc;
+    doc["accion"]    = accion;
+    doc["detalle"]   = detalle;
+    doc["distancia"] = "-- cm";
+    doc["fecha"]     = "23/11/2026";
+    doc["hora"]      = "12:20:00";
+    doc["usuario"]   = usuarioNombre;
+    doc["rut"]       = usuarioRUT;
+
+    String jsonString;
+    serializeJson(doc, jsonString);
+
+    int res = http.POST(jsonString);
+    if (res > 0) {
+      Serial.println("📝 [Firebase]: Acción registrada en /acciones -> " + accion);
+    }
+    http.end();
+  }
+}
+
+void sincronizarCircuitoEnFirebase(bool activado) {
+  if (WiFi.status() != WL_CONNECTED) return;
+
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+
+  if (http.begin(client, urlCircuito)) {
+    http.addHeader("Content-Type", "application/json");
+
+    StaticJsonDocument<256> doc;
+    if (activado) {
+      doc["estado"]       = "activado";
+      doc["estado1"]      = "activado";
+      doc["activado"]     = 1;
+      doc["desactivado"]  = 0;
+      doc["ledVerde"]     = 1;
+      doc["ledRojo"]      = 0;
+      doc["led"]          = 1;
+      doc["ledr"]         = 0;
+    } else {
+      doc["estado"]       = "desactivado";
+      doc["estado1"]      = "desactivado";
+      doc["activado"]     = 0;
+      doc["desactivado"]  = 1;
+      doc["ledVerde"]     = 0;
+      doc["ledRojo"]      = 1;
+      doc["led"]          = 0;
+      doc["ledr"]         = 1;
+    }
+    doc["ultimoUsuario"]  = usuarioRUT;
+
+    String jsonString;
+    serializeJson(doc, jsonString);
+
+    int res = http.PATCH(jsonString);
+    if (res > 0) {
+      Serial.println("🔄 [Firebase]: Nodo /circuito sincronizado.");
+    }
+    http.end();
+  }
+}
+
+void consultarEstadoFirebase() {
+  if (WiFi.status() != WL_CONNECTED) return;
+
+  WiFiClientSecure client;
+  client.setInsecure();
+  HTTPClient http;
+
+  if (http.begin(client, urlCircuito)) {
+    int httpCode = http.GET();
+
+    if (httpCode == HTTP_CODE_OK) {
+      String payload = http.getString();
+      
+      StaticJsonDocument<384> doc;
+      DeserializationError error = deserializeJson(doc, payload);
+
+      if (error) {
+        Serial.print("❌ Error JSON: ");
+        Serial.println(error.f_str());
+        http.end();
+        return;
+      }
+
+      String estadoStr  = doc["estado"].as<String>();
+      String estado1Str = doc["estado1"].as<String>();
+      estadoStr.toLowerCase();
+      estado1Str.toLowerCase();
+
+      int activadoVal = doc.containsKey("activado") ? doc["activado"].as<int>() : -1;
+      int ledVerdeVal = doc.containsKey("ledVerde") ? doc["ledVerde"].as<int>() : (doc.containsKey("ledv") ? doc["ledv"].as<int>() : -1);
+      int ledVal      = doc.containsKey("led") ? doc["led"].as<int>() : -1;
+
+      bool debeAbrir = false;
+      if (estadoStr == "activado" || estado1Str == "activado" || 
+          ledVal == 1 || ledVerdeVal == 1 || activadoVal == 1) {
+        debeAbrir = true;
+      } else {
+        debeAbrir = false;
+      }
+
+      if (debeAbrir) {
+        if (posicionActual != 90) {
+          Serial.println("🟢 [APP]: Apertura manual solicitada -> Compuerta 90° | LED Verde ON");
+          servoCompuerta.write(90);
+          digitalWrite(pinLedVerde, HIGH);
+          digitalWrite(pinLedRojo, LOW);
+          posicionActual = 90;
+          
+          activaciones++;
+          actualizarEstadisticasEnFirebase();
+          registrarAccion("Compuerta Activada", "Apertura manual desde la App");
+        }
+      } 
+      else {
+        if (posicionActual != 0) {
+          Serial.println("🔴 [APP]: Cierre manual solicitado -> Compuerta 0° | LED Rojo ON");
+          servoCompuerta.write(0);
+          digitalWrite(pinLedVerde, LOW);
+          digitalWrite(pinLedRojo, HIGH);
+          posicionActual = 0;
+          compuertaAbiertaPorPIR = false;
+
+          desactivaciones++;
+          actualizarEstadisticasEnFirebase();
+          registrarAccion("Compuerta Desactivada", "Cierre manual desde la App");
+        }
+      }
+    } else {
+      Serial.printf("⚠️ [Firebase Error]: Código HTTP %d\n", httpCode);
+    }
+    http.end();
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(pinLedVerde, OUTPUT);
+  pinMode(pinLedRojo, OUTPUT);
+  
+  pinMode(pinPIR, INPUT_PULLDOWN);
+
+  ESP32PWM::allocateTimer(0);
+  ESP32PWM::allocateTimer(1);
+  ESP32PWM::allocateTimer(2);
+  ESP32PWM::allocateTimer(3);
+  servoCompuerta.setPeriodHertz(50); 
+  servoCompuerta.attach(pinServo, 500, 2400); 
+
+  Serial.println("\n⚙️ [Servo]: Probando movimiento inicial...");
+  servoCompuerta.write(45);
+  delay(400);
+  servoCompuerta.write(0);
+  delay(400);
+  posicionActual = 0;
+
+  digitalWrite(pinLedRojo, HIGH);
+  digitalWrite(pinLedVerde, LOW);
+
+  Serial.println("\n--- Iniciando MascotaIoT ---");
+  WiFi.begin(ssid, password);
+  Serial.print("Conectando a Wi-Fi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("\n¡Conectado exitosamente!");
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
+
+  cargarDatosUsuario();
+  cargarEstadisticasIniciales();
+  sincronizarCircuitoEnFirebase(false);
+
+  Serial.println("✅ Sistema listo y sincronizado.");
+}
+
+void loop() {
+  unsigned long tiempoActual = millis();
+
+  int estadoPIR = digitalRead(pinPIR);
+
+  if (estadoPIR == HIGH) {
+    ultimoMomentoPIR = tiempoActual;
+
+    if (posicionActual != 90) {
+      Serial.println("🐾 [PIR]: ¡Mascota detectada! -> ABRIENDO COMPUERTA (90°)");
+      servoCompuerta.write(90);
+      digitalWrite(pinLedVerde, HIGH);
+      digitalWrite(pinLedRojo, LOW);
+      posicionActual = 90;
+      compuertaAbiertaPorPIR = true;
+
+      activaciones++;
+      actualizarEstadisticasEnFirebase();
+      sincronizarCircuitoEnFirebase(true);
+    }
+
+    if (tiempoActual - ultimoRegistroMovimiento >= 8000) {
+      ultimoRegistroMovimiento = tiempoActual;
+      obstaculos++;
+      actualizarEstadisticasEnFirebase();
+      registrarAccion("Movimiento Detectado", "Mascota detectada en compuerta (PIR)");
+    }
+  }
+  else {
+    if (compuertaAbiertaPorPIR && (tiempoActual - ultimoMomentoPIR >= 4000)) {
+      Serial.println("🐾 [PIR]: Mascota se alejó (4s sin señal) -> CERRANDO COMPUERTA (0°)");
+      servoCompuerta.write(0);
+      digitalWrite(pinLedVerde, LOW);
+      digitalWrite(pinLedRojo, HIGH);
+      posicionActual = 0;
+      compuertaAbiertaPorPIR = false;
+
+      desactivaciones++;
+      actualizarEstadisticasEnFirebase();
+      sincronizarCircuitoEnFirebase(false);
+    }
+  }
+  if (!compuertaAbiertaPorPIR) {
+    if (tiempoActual - ultimoChequeo >= 1500) {
+      ultimoChequeo = tiempoActual;
+      consultarEstadoFirebase();
+    }
+  }
+
+  delay(50);
+}
